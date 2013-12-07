@@ -53,6 +53,18 @@ public class CoreNlpPOSTagger{
 		return resultString;
 	}
 	
+	public String getTagString(String text) {
+		List<TaggedToken> tagged = getTaggedText(text);
+		
+		String resultString = "";
+		
+		for(TaggedToken token : tagged) {
+			resultString = resultString + token.tag + " ";
+		}
+		resultString = resultString.trim();
+		return resultString;
+	}
+	
 	public List<TaggedToken[]> getTaggedSentences(String text) {
 		ArrayList<TaggedToken> result = new ArrayList<TaggedToken>();
 		ArrayList<TaggedToken[]> output = new ArrayList<TaggedToken[]>();
